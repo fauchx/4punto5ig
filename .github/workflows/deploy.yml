@@ -1,0 +1,26 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Ejecutar el pipeline cuando se haga push a la rama main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Run Tests
+        run: echo "Running tests..."  # Aquí podrías agregar pruebas reales
+
+      - name: Build Application
+        run: echo "Building application..."  # Simulación de build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages  # Rama donde se despliega la aplicación
+          folder: public     # Carpeta a desplegar
