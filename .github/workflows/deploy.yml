@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main  # Ejecutar el pipeline cuando se haga push a la rama main
+      - main  
 
 jobs:
   build:
@@ -14,13 +14,12 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run Tests
-        run: echo "Running tests..."  # Aquí podrías agregar pruebas reales
-
+        run: echo "Running tests..."  
       - name: Build Application
-        run: echo "Building application..."  # Simulación de build
+        run: echo "Building application..."  
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: main  # Rama donde se despliega la aplicación
+          branch: main  
           folder: public     # Carpeta a desplegar
